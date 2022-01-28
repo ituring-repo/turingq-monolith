@@ -1,0 +1,9 @@
+.vscode/*
+!.vscode/launch.json
+node_modules
+build
+coverage
+.DS_STORE
+.env
+.nyc_output
+tmp

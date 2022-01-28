@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:13-alpine
+    container_name: ituring-monolith-database
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ituring
+    volumes:
+      - ituring-monolith-db-data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  ituring-monolith-db-data:

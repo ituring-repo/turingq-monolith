@@ -1,0 +1,3 @@
+CREATE USER test;
+CREATE DATABASE ituring_test;
+GRANT ALL PRIVILEGES ON DATABASE ituring_test TO test;

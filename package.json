@@ -1,0 +1,48 @@
+{
+  "name": "turingq-monolith",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node ace build --production",
+    "start": "node server.js",
+    "dev": "node ace serve --watch --node-args=\"--inspect=0.0.0.0:9229\"",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "test": "PG_DB_NAME=ituring_test node -r @adonisjs/assembler/build/register japaFile.ts",
+    "coverage": "nyc npm run test"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^5.3.8",
+    "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.3",
+    "adonis-preset-ts": "^2.1.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "http-status": "^1.5.0",
+    "japa": "^4.0.0",
+    "pino-pretty": "^7.2.0",
+    "prettier": "^2.5.1",
+    "supertest": "^6.1.6",
+    "typescript": "~4.5",
+    "youch": "^2.2.2",
+    "youch-terminal": "^1.1.1"
+  },
+  "dependencies": {
+    "@adonisjs/auth": "^8.0.10",
+    "@adonisjs/core": "^5.4.2",
+    "@adonisjs/lucid": "^16.3.2",
+    "@adonisjs/mail": "^7.2.4",
+    "@adonisjs/repl": "^3.1.7",
+    "@adonisjs/shield": "^7.0.7",
+    "luxon": "^2.1.1",
+    "nyc": "^15.1.0",
+    "pg": "^8.7.1",
+    "phc-bcrypt": "^1.0.7",
+    "proxy-addr": "^2.0.7",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.21",
+    "uuid": "^8.3.2"
+  }
+}
